@@ -40,6 +40,9 @@ export default function AnchorTemporaryDrawer() {
     <Box
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        "& .MuiListItemButton-root:hover": {
+          bgcolor: "rgba(97,187,70,0.25)",
+        },
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -50,7 +53,11 @@ export default function AnchorTemporaryDrawer() {
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <AttachMoneyIcon /> : <MailIcon />}
+                {index % 2 === 0 ? (
+                  <AttachMoneyIcon color="secondary" />
+                ) : (
+                  <MailIcon />
+                )}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -77,6 +84,12 @@ export default function AnchorTemporaryDrawer() {
           anchor={"right"}
           open={state["right"]}
           onClose={toggleDrawer("right", false)}
+          sx={{
+            "& .MuiDrawer-paper": {
+              bgcolor: "black",
+              backgroundImage: "none",
+            },
+          }}
         >
           {list("right")}
         </Drawer>
