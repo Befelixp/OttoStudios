@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import ThemeRegistry from "./components/ThemeRegistry";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeRegistry options={{ key: "mui-theme" }}>
-          <Navbar />
-          {children}
-        </ThemeRegistry>
+        <AppRouterCacheProvider>
+          <ThemeRegistry options={{ key: "mui-theme" }}>
+            <Navbar />
+            {children}
+          </ThemeRegistry>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

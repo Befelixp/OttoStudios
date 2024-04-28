@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/bauhaus-93");
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.bauhaus {
+  font-family: "Bauhaus 93", sans-serif;
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 2.25vw, 3rem);
+  line-height: 1.125em;
+  letter-spacing: 0.2em;
+}
+
+.description {
+  font-size: clamp(0.95rem, 1.25vw, 2rem);
+  line-height: 1.5em;
+}

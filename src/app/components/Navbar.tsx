@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.5)" }}>
         <Toolbar sx={{ bgcolor: "rgba(0,0,0,0.8)" }}>
           <Box sx={{ flexGrow: 1 }}>
             <Image src={logobutton} alt="logo" width={45} height={45} />
