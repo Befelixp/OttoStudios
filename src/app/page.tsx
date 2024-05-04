@@ -10,7 +10,11 @@ import Example from "./components/MyCarousel";
 export default function Home() {
   var title = new String("O som e a imagem da sua narrativa");
   var description = new String(
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus in. Faucibus turpis in eu mi bibendum. Aliquam sem fringilla ut morbi tincidunt. Est lorem ipsum dolor sit. Tortor posuere ac ut consequat semper viverra. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Nibh mauris cursus mattis molestie a iaculis at erat pellentesque."
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus in. Faucibus turpis in eu mi bibendum. Aliquam sem fringilla ut morbi tincidunt. Est lorem ipsum dolor sit. Tortor posuere ac ut consequat semper viverra."
+  );
+  var sobrenos = new String("Sobre nós");
+  var sobredesc = new String(
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus in. Faucibus turpis in eu mi bibendum. Aliquam sem fringilla ut morbi tincidunt. Est lorem ipsum dolor sit. Tortor posuere ac ut consequat semper viverra. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Nibh mauris cursus mattis molestie a iaculis at erat pellentesque."
   );
 
   return (
@@ -18,6 +22,7 @@ export default function Home() {
       <Box
         sx={{
           display: "flex",
+          maxHeight: "100vh",
         }}
         className="Home"
       >
@@ -26,12 +31,14 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            width: "50%",
-            marginTop: "6rem",
+            justifyContent: "center",
+            width: { xs: "100%", md: "50%" },
+            zIndex: 2,
+            height: "100vh",
           }}
         >
-          <Box sx={{ width: "80%" }}>
-            <Image src={logootto} alt="logo" width={200} height={100}></Image>
+          <Box className="TextHome" sx={{ width: "80%" }}>
+            <Image src={logootto} alt="logo" width={250} height={125}></Image>
             <h1 className="bauhaus">{title}</h1>
             <p className="montserrat description">{description}</p>
             <Box
@@ -49,29 +56,60 @@ export default function Home() {
           </Box>
         </Box>
         <Box
+          className="ImageHome"
           sx={{
+            position: { xs: "absolute", md: "relative" },
             display: "flex",
-            alignItems: "center",
-            width: "50%",
+            width: { xs: "100%", md: "50%" },
             marginTop: "4rem",
-            maxHeight: "630px",
+            maxHeight: "100vh",
+            overflow: "hidden",
+            zIndex: -1,
           }}
         >
           <Image
             src={mainimage}
             style={{
-              maxHeight: "100vh",
-              height: "auto",
+              height: "100vh",
               objectFit: "cover",
-              overflow: "hidden",
-              opacity: "60%",
+              opacity: "30%",
             }}
             alt="ImagemHome"
           ></Image>
         </Box>
       </Box>
-      <Box sx={{ width: "30%" }}>
-        <Example />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: { xs: "column", md: "row" },
+        }}
+        className="sobrenos"
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: { xs: "100%", md: "50%" },
+            marginTop: "6rem",
+            alignItems: { xs: "center", md: "start" },
+          }}
+        >
+          <Box sx={{ width: "80%", marginBottom: { xs: "3rem", md: "0" } }}>
+            <h1 className="bauhaus">{sobrenos}</h1>
+            <p className="montserrat description">{sobredesc}</p>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            maxHeight: "100vh",
+            width: { xs: "100%", md: "35%" },
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Example />
+        </Box>
       </Box>
     </Box>
   );

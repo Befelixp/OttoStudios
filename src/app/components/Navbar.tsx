@@ -45,16 +45,16 @@ export default function Navbar() {
                 border: "none",
                 transform: "scale(1.0)",
                 transition: "transform 0.3s ease-in-out",
-                fontSize: "0.9em",
+                fontSize: "max(0.7em,0.9vw)",
                 "&.Mui-selected": {
                   bgcolor: "transparent",
                   transform: "scale(1.1)",
                   transition: "transform 0.3s ease-in-out",
-                  fontSize: "1em",
+                  fontSize: "max(0.8em,1vw)",
                 },
               }}
             >
-              Home
+              Principal
             </ToggleButton>
             <ToggleButton
               value="aboutus"
@@ -62,16 +62,16 @@ export default function Navbar() {
                 border: "none",
                 transform: "scale(1.0)",
                 transition: "transform 0.3s ease-in-out",
-                fontSize: "0.9em",
+                fontSize: "max(0.7em,0.9vw)",
                 "&.Mui-selected": {
                   bgcolor: "transparent",
                   transform: "scale(1.1)",
                   transition: "transform 0.3s ease-in-out",
-                  fontSize: "1em",
+                  fontSize: "max(0.8em,1vw)",
                 },
               }}
             >
-              About Us
+              Sobre Nós
             </ToggleButton>
             <ToggleButton
               value="contacts"
@@ -79,16 +79,16 @@ export default function Navbar() {
                 border: "none",
                 transform: "scale(1.0)",
                 transition: "transform 0.3s ease-in-out",
-                fontSize: "0.9em",
+                fontSize: "max(0.7em,0.9vw)",
                 "&.Mui-selected": {
                   bgcolor: "transparent",
                   transform: "scale(1.1)",
                   transition: "transform 0.3s ease-in-out",
-                  fontSize: "1em",
+                  fontSize: "max(0.8em,1vw)",
                 },
               }}
             >
-              Contacts
+              Contatos
             </ToggleButton>
           </ToggleButtonGroup>
           <AnchorTemporaryDrawer />

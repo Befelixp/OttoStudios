@@ -10,7 +10,7 @@
 }
 
 .subtitle {
-  font-size: clamp(1.5rem, 2.25vw, 3rem);
+  font-size: clamp(1.75rem, 5vw, 4rem);
   line-height: 1.125em;
   letter-spacing: 0.2em;
 }
