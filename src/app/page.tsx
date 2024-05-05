@@ -85,6 +85,7 @@ export default function Home() {
           flexDirection: { xs: "column", md: "row" },
         }}
         className="sobrenos"
+        id="sobrenos"
       >
         <Box
           sx={{

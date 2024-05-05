@@ -7,10 +7,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import { IconButton } from "@mui/material";
+import { IconButton, Link } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import HomeIcon from "@mui/icons-material/Home";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -49,14 +49,15 @@ export default function AnchorTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Prices"].map((text, index) => (
+        {["Home", "Prices"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
+              {index % 2 === 0 ? <Link href="" /> : <Link href="/prices" />}
               <ListItemIcon>
                 {index % 2 === 0 ? (
-                  <AttachMoneyIcon color="secondary" />
+                  <HomeIcon color="secondary" />
                 ) : (
-                  <MailIcon />
+                  <AttachMoneyIcon color="secondary" />
                 )}
               </ListItemIcon>
               <ListItemText primary={text} />

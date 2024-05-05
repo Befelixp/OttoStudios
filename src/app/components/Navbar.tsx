@@ -1,14 +1,9 @@
 "use client";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import logobutton from "../images/ottominilogo.png";
 import Image from "next/image";
-import { AppBar, Box, ThemeProvider, Toolbar } from "@mui/material";
+import { AppBar, Box, Link, ThemeProvider, Toolbar } from "@mui/material";
 import * as React from "react";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import AnchorTemporaryDrawer from "./Drawer";
 
 export default function Navbar() {
@@ -27,70 +22,65 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.5)" }}>
         <Toolbar sx={{ bgcolor: "rgba(0,0,0,0.8)" }}>
-          <Box sx={{ flexGrow: 1 }}>
-            <Image src={logobutton} alt="logo" width={45} height={45} />
+          <Box sx={{ flexGrow: 1, cursor: "pointer" }}>
+            <Link href="">
+              <Image src={logobutton} alt="logo" width={45} height={45} />
+            </Link>
           </Box>
-
-          <ToggleButtonGroup
-            value={alignment}
-            exclusive
-            onChange={handleAlignment}
-            aria-label="Platform"
-            sx={{ flexGrow: 1 }}
-            color="secondary"
-          >
-            <ToggleButton
+          <Box sx={{ flexGrow: 1 }}>
+            <Button
+              onClick={() => {
+                window.scroll({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
               value="home"
               sx={{
                 border: "none",
                 transform: "scale(1.0)",
                 transition: "transform 0.3s ease-in-out",
                 fontSize: "max(0.7em,0.9vw)",
-                "&.Mui-selected": {
-                  bgcolor: "transparent",
-                  transform: "scale(1.1)",
-                  transition: "transform 0.3s ease-in-out",
-                  fontSize: "max(0.8em,1vw)",
+                "&.MuiButton-root": {
+                  color: "white",
                 },
               }}
             >
               Principal
-            </ToggleButton>
-            <ToggleButton
+            </Button>
+            <Button
+              onClick={() => {
+                const element = document.getElementById("sobrenos");
+                element?.scrollIntoView({ behavior: "smooth" });
+              }}
               value="aboutus"
               sx={{
                 border: "none",
                 transform: "scale(1.0)",
                 transition: "transform 0.3s ease-in-out",
                 fontSize: "max(0.7em,0.9vw)",
-                "&.Mui-selected": {
-                  bgcolor: "transparent",
-                  transform: "scale(1.1)",
-                  transition: "transform 0.3s ease-in-out",
-                  fontSize: "max(0.8em,1vw)",
+                "&.MuiButton-root": {
+                  color: "white",
                 },
               }}
             >
               Sobre Nós
-            </ToggleButton>
-            <ToggleButton
+            </Button>
+            <Button
               value="contacts"
               sx={{
                 border: "none",
                 transform: "scale(1.0)",
                 transition: "transform 0.3s ease-in-out",
                 fontSize: "max(0.7em,0.9vw)",
-                "&.Mui-selected": {
-                  bgcolor: "transparent",
-                  transform: "scale(1.1)",
-                  transition: "transform 0.3s ease-in-out",
-                  fontSize: "max(0.8em,1vw)",
+                "&.MuiButton-root": {
+                  color: "white",
                 },
               }}
             >
               Contatos
-            </ToggleButton>
-          </ToggleButtonGroup>
+            </Button>
+          </Box>
           <AnchorTemporaryDrawer />
         </Toolbar>
       </AppBar>
