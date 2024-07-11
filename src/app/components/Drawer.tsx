@@ -52,7 +52,6 @@ export default function AnchorTemporaryDrawer() {
         {["Home", "Prices"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              {index % 2 === 0 ? <Link href="" /> : <Link href="/prices" />}
               <ListItemIcon>
                 {index % 2 === 0 ? (
                   <HomeIcon color="secondary" />
@@ -62,6 +61,7 @@ export default function AnchorTemporaryDrawer() {
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
+            {index % 2 === 0 ? <Link href="/" /> : <Link href="/reserve" />}
           </ListItem>
         ))}
       </List>

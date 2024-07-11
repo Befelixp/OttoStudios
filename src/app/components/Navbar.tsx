@@ -23,7 +23,7 @@ export default function Navbar() {
       <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.5)" }}>
         <Toolbar sx={{ bgcolor: "rgba(0,0,0,0.8)" }}>
           <Box sx={{ flexGrow: 1, cursor: "pointer" }}>
-            <Link href="">
+            <Link href="/">
               <Image src={logobutton} alt="logo" width={45} height={45} />
             </Link>
           </Box>
@@ -67,6 +67,10 @@ export default function Navbar() {
               Sobre Nós
             </Button>
             <Button
+              onClick={() => {
+                const element = document.getElementById("contatenos");
+                element?.scrollIntoView({ behavior: "smooth" });
+              }}
               value="contacts"
               sx={{
                 border: "none",
