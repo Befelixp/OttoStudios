@@ -3,8 +3,6 @@
   align-items: center;
   background-color: none;
   border-radius: 2em;
-  border-color: #61bb46;
-  border-width: medium;
   color: #ffffff;
   padding: 5px 2em;
   font-weight: clamp();
@@ -42,4 +40,25 @@
 
 .calltoaction:focus::before {
   height: 180%;
+}
+
+.reservebutton {
+  font-size: max(1vw, 10px) !important;
+  align-items: center;
+  background-color: none;
+  border-radius: 0.25em;
+  border-color: #61bb46;
+  border-width: medium;
+  color: #61bb46;
+  padding: 0.25em 0.5em;
+  font-weight: clamp();
+  position: relative;
+  transition: 0.8s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.reservebutton:hover {
+  color: #000000;
+  background-color: #61bb46;
 }

@@ -10,6 +10,8 @@ import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Image from "next/image";
+import "../styles/buttons.css";
+import { Button } from "@mui/material";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -53,6 +55,18 @@ export default function RecipeReviewCard({
       <CardHeader title={title} subheader={subheader} />
       <CardMedia component="img" height="194" image={image} alt={title} />
       <CardActions disableSpacing>
+        <Button
+          color="secondary"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#61BB46",
+              color: "#000",
+              transition: "0.8s",
+            },
+          }}
+        >
+          SELECIONAR PLANOS{" "}
+        </Button>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
