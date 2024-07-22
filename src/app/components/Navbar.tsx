@@ -22,7 +22,7 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.5)" }}>
         <Toolbar sx={{ bgcolor: "rgba(0,0,0,0.8)" }}>
-          <Box sx={{ flexGrow: 1, cursor: "pointer" }}>
+          <Box sx={{ flexGrow: 1 }}>
             <Link href="/">
               <Image src={logobutton} alt="logo" width={45} height={45} />
             </Link>

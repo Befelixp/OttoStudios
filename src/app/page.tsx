@@ -1,8 +1,8 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import "./styles/fonts.css";
 import "./styles/buttons.css";
 import "./styles/transitions.css";
@@ -43,12 +43,15 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const router = useRouter();
+
   return (
     <Box className="Main" sx={{ display: "column" }}>
       <Box
         sx={{
           display: "flex",
           maxHeight: "100vh",
+          marginBottom: "1.5rem",
         }}
         className="Home hidden"
       >
@@ -76,6 +79,7 @@ export default function Home() {
                 alignItems: "center",
                 width: "50%",
               }}
+              onClick={() => router.push("/reserve")}
             >
               RESERVE
             </Box>
@@ -109,6 +113,7 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           flexDirection: { xs: "column", md: "row" },
+          marginBottom: "1.5rem",
         }}
         className="sobrenos hidden"
         id="sobrenos"
@@ -163,7 +168,13 @@ export default function Home() {
           </Box>
 
           <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Box sx={{ display: "flex", flexDirection: "row" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
               <InstagramIcon sx={{ fontSize: 40 }}></InstagramIcon>
               <a
                 href="https://www.instagram.com/ottosaudiovisual?igsh=MXVjcjQ1NDlsbzZ0MQ=="
@@ -173,7 +184,13 @@ export default function Home() {
                 @ottosaudiovisual
               </a>
             </Box>
-            <Box sx={{ display: "flex", flexDirection: "row" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
               <WhatsAppIcon sx={{ fontSize: 40 }}></WhatsAppIcon>
               <a
                 href="https://wa.me/+351912857953?text="
