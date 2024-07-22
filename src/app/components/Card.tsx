@@ -44,7 +44,12 @@ export default function RecipeReviewCard({
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        maxWidth: 345,
+        boxShadow: "0px 0vw 1.5rem #61BB46",
+      }}
+    >
       <CardHeader title={title} subheader={subheader} />
       <CardMedia component="img" height="194" image={image} alt={title} />
       <CardActions disableSpacing>

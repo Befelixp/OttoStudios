@@ -31,7 +31,9 @@ export default function Reserve() {
           }}
         >
           <Image src={logootto} alt="logo" width={250} height={125}></Image>
-          <h1 className="bauhaus">{title}</h1>
+          <h1 className="bauhaus" style={{ marginBottom: "2.5rem" }}>
+            {title}
+          </h1>
           <RecipeReviewCard
             title="Pacote Normal 1h"
             subheader="Pacote normal contém o direito de uma reserva de 1h do espaço para gravações de podcast, videocast, "
