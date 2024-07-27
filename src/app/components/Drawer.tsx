@@ -11,6 +11,7 @@ import { IconButton, Link } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import HomeIcon from "@mui/icons-material/Home";
+import { useRouter } from "next/navigation";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -36,6 +37,8 @@ export default function AnchorTemporaryDrawer() {
       setState({ ...state, [anchor]: open });
     };
 
+  const router = useRouter();
+
   const list = (anchor: Anchor) => (
     <Box
       sx={{
@@ -51,7 +54,9 @@ export default function AnchorTemporaryDrawer() {
       <List>
         {["Home", "Prices"].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton
+              onClick={() => router.push(index % 2 === 0 ? "/" : "/reserve")}
+            >
               <ListItemIcon>
                 {index % 2 === 0 ? (
                   <HomeIcon color="secondary" />
@@ -61,7 +66,6 @@ export default function AnchorTemporaryDrawer() {
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
-            {index % 2 === 0 ? <Link href="/" /> : <Link href="/reserve" />}
           </ListItem>
         ))}
       </List>
