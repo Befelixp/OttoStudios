@@ -53,7 +53,8 @@ export default function Home() {
           maxHeight: "100vh",
           marginBottom: "1.5rem",
         }}
-        className="Home hidden"
+        className="home hidden"
+        id="home"
       >
         <Box
           sx={{

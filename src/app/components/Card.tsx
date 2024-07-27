@@ -49,7 +49,12 @@ export default function RecipeReviewCard({
     <Card
       sx={{
         maxWidth: 345,
-        boxShadow: "0px 0vw 1.5rem #61BB46",
+        boxShadow: "0px 0vw 0.75rem #61BB46",
+        marginBottom: "2.5rem",
+        "&:hover": {
+          boxShadow: "0px 0vw 1.5rem #61BB46",
+          transition: "0.8s",
+        },
       }}
     >
       <CardHeader title={title} subheader={subheader} />

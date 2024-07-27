@@ -8,12 +8,43 @@ import RecipeReviewCard from "../components/Card";
 
 export default function Reserve() {
   var title = new String("Os nossos pacotes!");
+
+  const cardData = [
+    {
+      title: "Pacote Normal 1h",
+      subheader:
+        "Pacote normal contém o direito de uma reserva de 1h do espaço para gravações de podcast, videocast, ",
+      image: "/src/app/images/pacote1.png",
+      materials: "Materiais:",
+    },
+    {
+      title: "Pacote Normal 1h",
+      subheader:
+        "Pacote normal contém o direito de uma reserva de 1h do espaço para gravações de podcast, videocast, ",
+      image: "/src/app/images/pacote1.png",
+      materials: "Materiais:",
+    },
+    {
+      title: "Pacote Normal 1h",
+      subheader:
+        "Pacote normal contém o direito de uma reserva de 1h do espaço para gravações de podcast, videocast, ",
+      image: "/src/app/images/pacote1.png",
+      materials: "Materiais:",
+    },
+    {
+      title: "Pacote Normal 1h",
+      subheader:
+        "Pacote normal contém o direito de uma reserva de 1h do espaço para gravações de podcast, videocast, ",
+      image: "/src/app/images/pacote1.png",
+      materials: "Materiais:",
+    },
+  ];
+
   return (
     <Box className="Main" sx={{ display: "column" }}>
       <Box
         sx={{
           display: "flex",
-          maxHeight: "100vh",
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -21,25 +52,37 @@ export default function Reserve() {
       >
         <Box
           sx={{
+            marginTop: "4rem",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            width: { xs: "100%", md: "80%" },
+            width: { xs: "100%", md: "80%", lg: "60%" },
             zIndex: 2,
-            height: "100vh",
           }}
         >
           <Image src={logootto} alt="logo" width={250} height={125}></Image>
           <h1 className="bauhaus" style={{ marginBottom: "2.5rem" }}>
             {title}
           </h1>
-          <RecipeReviewCard
-            title="Pacote Normal 1h"
-            subheader="Pacote normal contém o direito de uma reserva de 1h do espaço para gravações de podcast, videocast, "
-            image="/src/app/images/pacote1.png"
-            materials="Materiais:"
-          />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              flexWrap: "wrap",
+            }}
+          >
+            {cardData.map((card, index) => (
+              <RecipeReviewCard
+                key={index}
+                title={card.title}
+                subheader={card.subheader}
+                image={card.image}
+                materials={card.materials}
+              />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>
