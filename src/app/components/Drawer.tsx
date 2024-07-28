@@ -52,7 +52,7 @@ export default function AnchorTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Home", "Prices"].map((text, index) => (
+        {["Principal", "Reserve"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton
               onClick={() => router.push(index % 2 === 0 ? "/" : "/reserve")}
