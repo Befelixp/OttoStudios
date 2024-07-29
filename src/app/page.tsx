@@ -1,8 +1,7 @@
 "use client";
-import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { Box } from "@mui/material";
+import { Box, Link } from "@mui/material";
 import "./styles/fonts.css";
 import "./styles/buttons.css";
 import "./styles/transitions.css";
@@ -43,8 +42,6 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const router = useRouter();
-
   return (
     <Box className="Main" sx={{ display: "column" }}>
       <Box
@@ -71,19 +68,20 @@ export default function Home() {
             <Image src={logootto} alt="logo" width={250} height={125}></Image>
             <h1 className="bauhaus">{title}</h1>
             <p className="montserrat description">{description}</p>
-            <Box
-              className="calltoaction montserrat"
-              sx={{
-                marginTop: "24px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "50%",
-              }}
-              onClick={() => router.push("/reserve")}
-            >
-              RESERVE
-            </Box>
+            <Link href="/reserve" underline="none">
+              <Box
+                className="calltoaction montserrat"
+                sx={{
+                  marginTop: "24px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "50%",
+                }}
+              >
+                RESERVE
+              </Box>
+            </Link>
           </Box>
         </Box>
         <Box

@@ -5,7 +5,6 @@ import { Box } from "@mui/material";
 import logootto from "../images/logoprincipal.png";
 import Image from "next/image";
 import RecipeReviewCard from "../components/Card";
-import pacote1 from "../images/pacote1.png";
 
 export default function Reserve() {
   var title = new String("Os nossos pacotes!");

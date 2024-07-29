@@ -4,14 +4,12 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { IconButton, Link } from "@mui/material";
+import { IconButton, Link, ListItemButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import HomeIcon from "@mui/icons-material/Home";
-import { useRouter } from "next/navigation";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -37,8 +35,6 @@ export default function AnchorTemporaryDrawer() {
       setState({ ...state, [anchor]: open });
     };
 
-  const router = useRouter();
-
   const list = (anchor: Anchor) => (
     <Box
       sx={{
@@ -52,22 +48,36 @@ export default function AnchorTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Principal", "Reserve"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton
-              onClick={() => router.push(index % 2 === 0 ? "/" : "/reserve")}
-            >
+        <ListItem disablePadding>
+          <Link
+            href="/"
+            underline="none"
+            color="inherit"
+            sx={{ width: "100%" }}
+          >
+            <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? (
-                  <HomeIcon color="secondary" />
-                ) : (
-                  <AttachMoneyIcon color="secondary" />
-                )}
+                <HomeIcon color="secondary" />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary="Principal" />
             </ListItemButton>
-          </ListItem>
-        ))}
+          </Link>
+        </ListItem>
+        <ListItem disablePadding>
+          <Link
+            href="/reserve"
+            underline="none"
+            color="inherit"
+            sx={{ width: "100%" }}
+          >
+            <ListItemButton>
+              <ListItemIcon>
+                <AttachMoneyIcon color="secondary" />
+              </ListItemIcon>
+              <ListItemText primary="Reserve" />
+            </ListItemButton>
+          </Link>
+        </ListItem>
       </List>
       <Divider />
     </Box>
