@@ -47,7 +47,7 @@ export default function Home() {
       <Box
         sx={{
           display: "flex",
-          maxHeight: "100vh",
+          maxHeight: "100dvh",
           marginBottom: "1.5rem",
         }}
         className="home hidden"
@@ -61,7 +61,7 @@ export default function Home() {
             justifyContent: "center",
             width: { xs: "100%", md: "50%" },
             zIndex: 2,
-            height: "100vh",
+            height: "100dvh",
           }}
         >
           <Box className="TextHome" sx={{ width: "80%" }}>
@@ -91,7 +91,7 @@ export default function Home() {
             display: "flex",
             width: { xs: "100%", md: "50%" },
             marginTop: "4rem",
-            maxHeight: "100vh",
+            maxHeight: "100dvh",
             overflow: "hidden",
             zIndex: -1,
           }}
@@ -99,7 +99,7 @@ export default function Home() {
           <Image
             src={mainimage}
             style={{
-              height: "100vh",
+              height: "100dvh",
               objectFit: "cover",
               opacity: "30%",
             }}
@@ -133,7 +133,7 @@ export default function Home() {
         </Box>
         <Box
           sx={{
-            maxHeight: "100vh",
+            maxHeight: "100dvh",
             width: { xs: "100%", md: "35%" },
             alignItems: "center",
             justifyContent: "center",
@@ -204,7 +204,7 @@ export default function Home() {
 
         <Box
           sx={{
-            height: "100vh",
+            height: "100dvh",
             width: { xs: "100%", md: "35%" },
             display: "flex", // Adicionado para ativar o flexbox
             alignItems: "center", // Alinhamento vertical
