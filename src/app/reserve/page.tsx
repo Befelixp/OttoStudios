@@ -4,7 +4,7 @@ import "../styles/buttons.css";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import RecipeReviewCard from "../components/RecipeReviewCard";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 
 export default function Reserve() {
   var title = "Os nossos pacotes!";
