@@ -113,6 +113,7 @@ export default function Home() {
             zIndex: { xs: 1, md: 1 }, // Ajustado z-index
             top: 0,
             left: 0,
+            opacity: { xs: 0.3, md: 0.3 }, // Responsividade aplicada no contêiner
           }}
         >
           <Image
@@ -121,7 +122,6 @@ export default function Home() {
             fill
             style={{
               objectFit: "cover",
-              opacity: { xs: "0.3", md: "0.3" }, // Ajustada opacidade
             }}
             priority
           />
