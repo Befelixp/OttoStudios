@@ -210,6 +210,7 @@ export default function Home() {
             alignItems: "center", // Alinhamento vertical
             justifyContent: "center", // Alinhamento horizontal
             overflow: "hidden",
+
           }}
         >
           <iframe
