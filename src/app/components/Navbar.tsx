@@ -1,16 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
-import logobutton from "../images/ottominilogo.png";
 import Image from "next/image";
-import { AppBar, Box, Link, Toolbar } from "@mui/material";
+import { AppBar, Box, Link, Toolbar, useMediaQuery } from "@mui/material";
 import AnchorTemporaryDrawer from "./Drawer";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
 
-  const isHome = usePathname() == "/";
+  const isHome = usePathname() === "/";
+  const isMobile = useMediaQuery("(max-width:600px)"); // Detecta se é mobile
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,17 +36,24 @@ export default function Navbar() {
     };
   }, []);
 
-  if (isHome) {
-    return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.5)" }}>
-          <Toolbar sx={{ bgcolor: "rgba(0,0,0,0.8)" }}>
-            <Box sx={{ flexGrow: 1 }}>
-              <Link href="/">
-                <Image src={logobutton} alt="logo" width={45} height={45} />
-              </Link>
-            </Box>
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.5)" }}>
+        <Toolbar sx={{ bgcolor: "rgba(0,0,0,0.8)" }}>
+          {/* Logo */}
+          <Box sx={{ flexGrow: 1 }}>
+            <Link href="/">
+              <Image
+                src="/images/ottominilogo.png"
+                alt="logo"
+                width={45}
+                height={45}
+              />
+            </Link>
+          </Box>
 
+          {/* Botões de navegação */}
+          {isHome && (
             <Box sx={{ flexGrow: 1 }}>
               <Button
                 onClick={() => {
@@ -110,25 +117,12 @@ export default function Navbar() {
                 Contatos
               </Button>
             </Box>
-            <AnchorTemporaryDrawer />
-          </Toolbar>
-        </AppBar>
-      </Box>
-    );
-  } else {
-    return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" sx={{ bgcolor: "rgba(0,0,0,0.5)" }}>
-          <Toolbar sx={{ bgcolor: "rgba(0,0,0,0.8)" }}>
-            <Box sx={{ flexGrow: 1 }}>
-              <Link href="/">
-                <Image src={logobutton} alt="logo" width={45} height={45} />
-              </Link>
-            </Box>
-            <AnchorTemporaryDrawer />
-          </Toolbar>
-        </AppBar>
-      </Box>
-    );
-  }
+          )}
+
+          {/* Drawer - Exibe em todas as páginas, exceto na Home em mobile */}
+          {!isHome && <AnchorTemporaryDrawer />}
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
 }

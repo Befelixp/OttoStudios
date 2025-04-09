@@ -3,24 +3,20 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import Image from "next/image";
-import carousel1 from "../images/IMG_3899.png";
-import carousel2 from "../images/IMG_3838.png";
-import carousel4 from "../images/IMG_3837.png";
-import carousel5 from "../images/IMG_3830.png";
 
 export default function Example(props: any) {
   var items = [
     {
-      img: carousel1,
+      img: "/images/IMG_3899.png",
     },
     {
-      img: carousel2,
+      img: "/images/IMG_3838.png",
     },
     {
-      img: carousel4,
+      img: "/images/IMG_3837.png",
     },
     {
-      img: carousel5,
+      img: "/images/IMG_3830.png",
     },
   ];
 
